@@ -1,0 +1,62 @@
+# Nmap 7.91 scan initiated Sat May  8 18:38:32 2021 as: nmap -sC -sV -oN nmap/initial -v cgau.sdc.tf
+Nmap scan report for cgau.sdc.tf (104.21.17.237)
+Host is up (0.028s latency).
+Other addresses for cgau.sdc.tf (not scanned): 172.67.178.219 2606:4700:3033::6815:11ed 2606:4700:3032::ac43:b2db
+Not shown: 996 filtered ports
+PORT     STATE SERVICE  VERSION
+80/tcp   open  http     Cloudflare http proxy
+| http-git: 
+|   104.21.17.237:80/.git/
+|     Git repository found!
+|     .git/COMMIT_EDITMSG matched patterns 'user'
+|     Repository description: Unnamed repository; edit this file 'description' to name the...
+|_    Last commit message: Initial commit  # Please enter the commit message for your c...
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+| http-robots.txt: 2 disallowed entries 
+|_/admin.html /.git/
+|_http-server-header: cloudflare
+|_http-title: Home - Cybersecurity Group at UCSD
+443/tcp  open  ssl/http Cloudflare http proxy
+| http-git: 
+|   104.21.17.237:443/.git/
+|     Git repository found!
+|     .git/COMMIT_EDITMSG matched patterns 'user'
+|     Repository description: Unnamed repository; edit this file 'description' to name the...
+|_    Last commit message: Initial commit  # Please enter the commit message for your c...
+| http-methods: 
+|_  Supported Methods: GET HEAD POST OPTIONS
+| http-robots.txt: 2 disallowed entries 
+|_/admin.html /.git/
+|_http-server-header: cloudflare
+|_http-title: Home - Cybersecurity Group at UCSD
+| ssl-cert: Subject: commonName=sni.cloudflaressl.com/organizationName=Cloudflare, Inc./stateOrProvinceName=CA/countryName=US
+| Subject Alternative Name: DNS:sdc.tf, DNS:*.sdc.tf, DNS:sni.cloudflaressl.com
+| Issuer: commonName=Cloudflare Inc ECC CA-3/organizationName=Cloudflare, Inc./countryName=US
+| Public Key type: ec
+| Public Key bits: 256
+| Signature Algorithm: ecdsa-with-SHA256
+| Not valid before: 2020-12-24T00:00:00
+| Not valid after:  2021-12-23T23:59:59
+| MD5:   c55c 7481 9759 cc15 aa20 29ea 390c cb36
+|_SHA-1: b5ff af15 bc31 2908 0b03 250f 3c47 03f1 70f2 e50c
+8080/tcp open  http     Cloudflare http proxy
+|_http-server-header: cloudflare
+|_http-title: Error 404 (Not Found)!!1
+8443/tcp open  ssl/http Cloudflare http proxy
+|_http-server-header: cloudflare
+|_http-title: 400 The plain HTTP request was sent to HTTPS port
+| ssl-cert: Subject: commonName=sni.cloudflaressl.com/organizationName=Cloudflare, Inc./stateOrProvinceName=CA/countryName=US
+| Subject Alternative Name: DNS:sdc.tf, DNS:*.sdc.tf, DNS:sni.cloudflaressl.com
+| Issuer: commonName=Cloudflare Inc ECC CA-3/organizationName=Cloudflare, Inc./countryName=US
+| Public Key type: ec
+| Public Key bits: 256
+| Signature Algorithm: ecdsa-with-SHA256
+| Not valid before: 2020-12-24T00:00:00
+| Not valid after:  2021-12-23T23:59:59
+| MD5:   c55c 7481 9759 cc15 aa20 29ea 390c cb36
+|_SHA-1: b5ff af15 bc31 2908 0b03 250f 3c47 03f1 70f2 e50c
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sat May  8 18:40:03 2021 -- 1 IP address (1 host up) scanned in 91.61 seconds
