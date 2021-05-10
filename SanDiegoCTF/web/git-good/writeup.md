@@ -40,4 +40,4 @@ Now we just go to /admin.html and login with the email as `aaron@cgau.sdc.tf` an
 
 ## Thoughts
 
-The challenge was overall, a fairly easy challenge. The CTF classified it as medium challenge, but it had more solves than all the easy web challenges. I had a lot of fun solving this challenge, and learned enumerating remote .git folders to gain access to interesting files
+The challenge was overall, a fairly easy challenge. The CTF classified it as medium challenge, but it had more solves than all the easy web challenges. I had a lot of fun solving this challenge, and learned enumerating remote .git folders to gain access to interesting files. A great challenge overall!
