@@ -6,38 +6,42 @@
 
 ![challenge picture](challenge.png)
 
-## Thought Process
+## TLDR
 
-The name of the challenge was Git Good, so I was sure that there would be something related to git. If I were to be able to access the .git folder for that website, I could gain access to the website source code, and maybe even the flag. So I started digging.
+The name of the challenge is Git Good, so there must be something related to git. If we were to be able to access the `.git` folder for that website, we could maybe gain access to the website source code, and maybe even the flag. ON digging some more, we find `/.git/COMMIT_EDITMSG` and `/admin.html`. We can use [GitTools](https://github.com/internetwache/GitTools) to dump and extract files from the remote `.git` folder. On navigating the file structure, we find a `users.db` SQLite database file, which contains emails and their password hashes. After cracking the password hashes, we can login with the email and password on the `/admin.html` page, which gives us the flag.
 
 ## Scanning
 
-I first went to the robots.txt page, and found /admin.html and /.git/. Going to /admin.html takes you to a login page, which asks you for an email and a password. I had no clue of either, so I just continued to enumerate.
+We should probably check out `robots.txt` for this website.
 
-I ran a basic nmap scan on the host (output can be found in nmap/initial). On examining the results, I found some interesting stuff.
+![robots](pictures/robots.png)
 
-![nmap scan](nmapscan.png)
+`/admin.html` and `/.git/` look very interesting. Going to `/admin.html` takes us to a login page, which asks us for an email and a password. We have no clue about either of them, so lets keep looking.
 
-The nmap scan revealed the .git directory and the COMMIT_EDITMSG file. I navigated to /.git/COMMIT_EDITMSG and it started to download the file on my local computer. This meant that I could access the files of the .git folder.  
+We can run a basic nmap scan on the host (output can be found in `nmap/initial`). On examining the results, we find some interesting stuff.
+
+![nmap scan](pictures/nmapscan.png)
+
+The nmap scan reveals the `.git` directory and the `COMMIT_EDITMSG` file. On navigating to `/.git/COMMIT_EDITMSG`, it starts to download the file on our local computer. This means that we can access the files of the `.git` folder.  
 
 ## Exploitation
 
-On examining the COMMIT_EDITMSG file, I found a potential email address for /admin.html page. aaron@cgau.sdc.tf. I also found a bunch of filenames, but the one that immediately caught my eye was users.db. But I could not access the users.db file just by navigating to /users.db, as it said forbidden. My main aim was to somehow get the files from the .git folder. In the .git folder, objects are stored as blobs, so it wasnt easy to read them.
+On examining the `COMMIT_EDITMSG` file, we find a potential email address for the `/admin.html`page, `aaron@cgau.sdc.tf`. We also find a bunch of filenames, but the one that looks the most interesting is `users.db`. But we cannot access the `users.db` file just by navigating to `/users.db`, as it said forbidden. Our main aim is to somehow get the files from the `.git` folder. In the `.git` folder, objects are stored as blobs, so its not going to be easy to read them.
 
-I spent some time trying to manually enumerate the .git folder and wasn't getting anywhere. I then came across [this github repository](https://github.com/internetwache/GitTools). This made everything so much simpler. By using the "Dumper" tool, I downloaded all the possible files from that remote .git folder. After that, I had a local copy of all those .git files. But it was the same problem, I could not do anything with those blobs. Thats where the "Extractor" tool from the GitTools repo came in. It tries to extract files and commits from a broken git repository. Perfect!  
+I personally spent some time trying to manually enumerate the `.git` folder and wasn't getting anywhere. I then came across [this github repository](https://github.com/internetwache/GitTools). This made everything so much simpler. By using the `Dumper` tool, we can download all possible files from that remote `.git` folder. After that, we have a local copy of all those files in the `.git` folder. But its the same problem again, we can not do anything with those blobs. Thats where the `Extractor` tool from the GitTools repo comes in. It tries to extract files and commits from a broken git repository. Perfect!  
 
-I used the "Extractor" tool to get a copy of the git repository files. On navigating the files on my computer, I was able to finally get access to the users.db that I wanted so much. From the source code, I get to know that the database is a SQLite database. So I used an online SQLite database viewer to view the users.db, and sure enough, there were emails and password hashes. Nice and easy.
+We can use the `Extractor` tool to get a copy of the files in the `.git` folder. On navigating the files in our file explorer, we can finally get our hands on the `users.db` that we wanted all along. From the source code of the web app, we find that the database is an SQLite database. So we can use an online SQLite database viewer to view the `users.db`, and sure enough, there are emails and password hashes. Nice and easy.
 
-![database](db.png)
+![database](pictures/db.png)
 
-The hash can be cracked easily with an online hash cracker like https://crackstation.net. On cracking the hash, we get the password of the aaron@cgau.sdc.tf email as `weakpassword`. Challenge solved.
+The hash can be cracked easily with an online hash cracker like https://crackstation.net. On cracking the hash, we get the password of the `aaron@cgau.sdc.tf` email as `weakpassword`. Challenge solved.
 
-![hash](hash.png)
+![hash](pictures/hash.png)
 
-Now we just go to /admin.html and login with the email as `aaron@cgau.sdc.tf` and password as `weakpassword` to get the flag.
+Now we just go to `/admin.html` and login with the email as `aaron@cgau.sdc.tf` and password as `weakpassword` to get the flag.
 
-![flag](flag.png)
+![flag](pictures/flag.png)
 
 ## Thoughts
 
-The challenge was overall, a fairly easy challenge. The CTF classified it as medium challenge, but it had more solves than all the easy web challenges. I had a lot of fun solving this challenge, and learned enumerating remote .git folders to gain access to interesting files. A great challenge overall!
+The challenge was overall, a fairly easy challenge. The CTF classified it as medium challenge, but it had more solves than all the easy web challenges. I had a lot of fun solving this challenge, and learned enumerating remote `.git` folders to gain access to interesting files. A great challenge overall!
