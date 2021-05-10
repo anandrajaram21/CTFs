@@ -10,7 +10,7 @@
 
 The problem statement first says that we have to launch the rocket with the help of the API. By inspecting the network tab in the chrome dev tools during the initial page load, we see that a get request is made to `/api/status?verbose=`. On accessing that page with the `verbose` parameter set to true, it gives us a list of api endpoints, one of which was `/api/rocketLaunch/`. On sending a POST request to that route with the required parameters, it asks us for a "frontend authorization token" for which we have to dig into the website source code. After finding the token and providing it along with the other parameters, it gives us the flag.
 
-## Scanning
+## Solving the challenge itself
 
 On examining the requests made during the initial page load, we find a request being made to the API route `/api/status?verbose=`. 
 
