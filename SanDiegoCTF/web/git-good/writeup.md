@@ -1,8 +1,8 @@
 # Git Good
 
-## Author: [Anand Rajaram](https://github.com/anandrajaram21)
+- Author: [Anand Rajaram](https://github.com/anandrajaram21)
 
-### Problem Statement
+## Problem Statement
 
 ![challenge picture](challenge.png)
 
