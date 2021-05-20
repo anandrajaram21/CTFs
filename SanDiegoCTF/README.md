@@ -6,11 +6,4 @@ This event is hosted yearly by ACM Cyber, the chief cybersecurity organization o
 
 [CTFTime Event](https://ctftime.org/event/1255)
 
-Here, you will be able to find writeups to challenges I was able to solve, and community writeups for the ones I wasn't able to solve. My team was "wannabehackers" and we placed 41st on the leaderboard. Not too shabby for my first CTF.
-
-- [OSINT](https://github.com/anandrajaram21/CTFs/tree/main/SanDiegoCTF/osint)
-- [Crypto](https://github.com/anandrajaram21/CTFs/tree/main/SanDiegoCTF/crypto)
-- [Web](https://github.com/anandrajaram21/CTFs/tree/main/SanDiegoCTF/web)
-- [Revenge](https://github.com/anandrajaram21/CTFs/tree/main/SanDiegoCTF/revenge)
-- [Pwn](https://github.com/anandrajaram21/CTFs/tree/main/SanDiegoCTF/pwn)
-- [Misc](https://github.com/anandrajaram21/CTFs/tree/main/SanDiegoCTF/misc)
+Here, you will be able to find writeups to challenges I was able to solve. My team was "wannabehackers" and we placed 41st on the leaderboard. Not too shabby for my first CTF.
