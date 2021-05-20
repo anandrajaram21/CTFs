@@ -7,3 +7,5 @@ This event is hosted yearly by ACM Cyber, the chief cybersecurity organization o
 [CTFTime Event](https://ctftime.org/event/1255)
 
 Here, you will be able to find writeups to challenges I was able to solve. My team was "wannabehackers" and we placed 41st on the leaderboard. Not too shabby for my first CTF.
+
+Huge thanks to [Sumuk](https://github.com/sumukshashidhar) who helped me with some of the challenges!
