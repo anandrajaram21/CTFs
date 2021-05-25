@@ -26,3 +26,6 @@ Only for personal use, to store passwords in between levels. If you want a full 
 - bandit21 - gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr
 - bandit22 - Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
 - bandit23 - jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n
+- bandit24 - UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ
+- bandit25 - uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
+- bandit26 - 5czgV9L3Xx8JPOyRbXh6lQbmIOWvPT6Z
