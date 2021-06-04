@@ -29,3 +29,10 @@ Only for personal use, to store passwords in between levels. If you want a full 
 - bandit24 - UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ
 - bandit25 - uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
 - bandit26 - 5czgV9L3Xx8JPOyRbXh6lQbmIOWvPT6Z
+- bandit27 - 3ba3118a22e93127a4ed485be72ef5ea
+- bandit28 - 0ef186ac70e04ea33b4c1853d2526fa2
+- bandit29 - bbc96594b4e001778eee9975372716b2
+- bandit30 - 5b90576bedb2cc04c86a9e924ce42faf
+- bandit31 - 47e603bb428404d265f59c42920d81e5
+- bandit32 - 56a9bf19c63d650ce78e6ec0354ee45e
+- bandit33 - c9c3199ddf4121b10cf581a98d51caee
